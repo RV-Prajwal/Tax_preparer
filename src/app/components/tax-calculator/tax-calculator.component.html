@@ -1,0 +1,288 @@
+<div class="tax-calculator">
+  <div class="calculator-container">
+    <div class="calculator-header">
+      <div class="calculator-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="2" width="16" height="20" rx="2"/>
+          <line x1="8" y1="6" x2="16" y2="6"/>
+          <line x1="8" y1="10" x2="16" y2="10"/>
+          <line x1="8" y1="14" x2="12" y2="14"/>
+          <line x1="8" y1="18" x2="12" y2="18"/>
+        </svg>
+      </div>
+      <h2 class="calculator-title">Tax Savings Calculator</h2>
+      <p class="calculator-subtitle">Estimate your potential tax savings with professional tax preparation</p>
+    </div>
+
+    <form class="calculator-form" (ngSubmit)="calculateSavings()">
+      <div class="form-section">
+        <label class="form-label">
+          <svg class="form-label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          Filing Status
+        </label>
+        <div class="radio-group">
+          <label *ngFor="let status of filingStatuses" class="radio-option">
+            <input
+              type="radio"
+              name="filingStatus"
+              [value]="status.value"
+              [(ngModel)]="filingStatus"
+              class="radio-input"
+            />
+            <span class="radio-label">{{ status.label }}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label class="form-label" for="income">
+          <svg class="form-label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+          </svg>
+          Annual Income
+        </label>
+        <div class="input-wrapper">
+          <span class="input-prefix">$</span>
+          <input
+            type="number"
+            id="income"
+            name="income"
+            [(ngModel)]="annualIncome"
+            class="form-input"
+            min="0"
+            step="1000"
+            required
+          />
+        </div>
+        <div class="range-slider">
+          <input
+            type="range"
+            [(ngModel)]="annualIncome"
+            name="incomeRange"
+            min="0"
+            max="500000"
+            step="5000"
+            class="slider"
+          />
+          <div class="slider-labels">
+            <span>$0</span>
+            <span>$500K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <label class="form-label">
+          <svg class="form-label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 11l3 3L22 4"/>
+            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+          Select What Applies to You
+        </label>
+        <div class="checkbox-group">
+          <label class="checkbox-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="hasBusinessIncome"
+              name="hasBusinessIncome"
+              class="checkbox-input"
+            />
+            <span class="checkbox-checkmark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <span class="checkbox-label">
+              <span class="checkbox-label-text">Self-Employed / Business Income</span>
+              <span class="checkbox-label-hint">Potential savings: $1,500+</span>
+            </span>
+          </label>
+
+          <label class="checkbox-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="hasRentalProperty"
+              name="hasRentalProperty"
+              class="checkbox-input"
+            />
+            <span class="checkbox-checkmark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <span class="checkbox-label">
+              <span class="checkbox-label-text">Rental Property / Real Estate</span>
+              <span class="checkbox-label-hint">Potential savings: $2,000+</span>
+            </span>
+          </label>
+
+          <label class="checkbox-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="hasInvestments"
+              name="hasInvestments"
+              class="checkbox-input"
+            />
+            <span class="checkbox-checkmark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <span class="checkbox-label">
+              <span class="checkbox-label-text">Investment Income / Capital Gains</span>
+              <span class="checkbox-label-hint">Potential savings: $800+</span>
+            </span>
+          </label>
+
+          <label class="checkbox-option">
+            <input
+              type="checkbox"
+              [(ngModel)]="hasCharitableDonations"
+              name="hasCharitableDonations"
+              class="checkbox-input"
+            />
+            <span class="checkbox-checkmark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M5 13l4 4L19 7"/>
+              </svg>
+            </span>
+            <span class="checkbox-label">
+              <span class="checkbox-label-text">Charitable Donations</span>
+              <span class="checkbox-label-hint">Potential savings: $500+</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-section" *ngIf="hasBusinessIncome">
+        <label class="form-label" for="businessExpenses">
+          <svg class="form-label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+          </svg>
+          Estimated Annual Business Expenses
+        </label>
+        <div class="input-wrapper">
+          <span class="input-prefix">$</span>
+          <input
+            type="number"
+            id="businessExpenses"
+            name="businessExpenses"
+            [(ngModel)]="businessExpenses"
+            class="form-input"
+            min="0"
+            step="500"
+          />
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-calculate">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Calculate My Savings
+        </button>
+        <button type="button" class="btn-reset" (click)="reset()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 4v6h6"/>
+            <path d="M3.51 15a9 9 0 102.13-9.36L1 10"/>
+          </svg>
+          Reset
+        </button>
+      </div>
+    </form>
+
+    <div class="calculator-results" *ngIf="showResults && result" [@slideIn]>
+      <div class="results-header">
+        <svg class="results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+        <h3 class="results-title">Your Estimated Tax Savings</h3>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card result-card--primary">
+          <div class="result-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="result-card-content">
+            <div class="result-card-label">Potential Annual Savings</div>
+            <div class="result-card-value">${{ result.estimatedSavings | number:'1.0-0' }}</div>
+            <div class="result-card-hint">With expert tax preparation</div>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div class="result-card-content">
+            <div class="result-card-label">Standard Deduction</div>
+            <div class="result-card-value">${{ result.standardDeduction | number:'1.0-0' }}</div>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div class="result-card-content">
+            <div class="result-card-label">Potential Deductions</div>
+            <div class="result-card-value">${{ result.potentialDeductions | number:'1.0-0' }}</div>
+          </div>
+        </div>
+
+        <div class="result-card">
+          <div class="result-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <div class="result-card-content">
+            <div class="result-card-label">Effective Tax Rate</div>
+            <div class="result-card-value">{{ result.effectiveTaxRate | number:'1.1-1' }}%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-cta">
+        <div class="results-cta-content">
+          <h4 class="results-cta-title">Ready to Maximize Your Tax Savings?</h4>
+          <p class="results-cta-text">Schedule a free consultation with Richard Schwartz to unlock your full tax savings potential.</p>
+        </div>
+        <a href="#contact" class="results-cta-button">
+          <span>Book Free Consultation</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="results-disclaimer">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        <p>This is an estimate only. Actual savings may vary based on your specific situation. Results are not guaranteed and depend on individual circumstances.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="loading-screen" [class.loading-screen--hidden]="!isVisible">
+  <div class="loading-background">
+    <div class="loading-background__circle loading-background__circle--1"></div>
+    <div class="loading-background__circle loading-background__circle--2"></div>
+    <div class="loading-background__circle loading-background__circle--3"></div>
+  </div>
+
+  <div class="loading-container">
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="spinner__ring spinner__ring--1"></div>
+        <div class="spinner__ring spinner__ring--2"></div>
+        <div class="spinner__ring spinner__ring--3"></div>
+      </div>
+      
+      <div class="logo-center">
+        <img src="assets/logos/logo.png" alt="Schwartz Accounting Logo" class="logo-image" />
+      </div>
+    </div>
+
+    <div class="loading-content">
+      <h2 class="loading-title">
+        <span class="loading-title__text">Schwartz Accounting</span>
+        <span class="loading-title__shine"></span>
+      </h2>
+
+      <!-- <div class="loading-tagline">
+        <svg class="loading-tagline__icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+        <span>Denver's Most Trusted Tax Advisor for 19 Years</span>
+        <svg class="loading-tagline__icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+      </div> -->
+      
+      <div class="loading-text">
+        <span>Your Friend in Tax Preparation</span>
+        <div class="loading-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-bar__fill"></div>
+      </div>
+    </div>
+  </div>
+</div>

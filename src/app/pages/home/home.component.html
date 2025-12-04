@@ -1,0 +1,503 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero__background">
+    <img src="assets/images/hero-section.jpg" alt="Professional tax advisory" class="hero__bg-image" />
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__container">
+    <div class="hero__content">
+      <div class="hero__badge">Serving Denver Since 2006</div>
+      <h1 class="hero__headline">Your Friend in Tax Preparation</h1>
+      <p class="hero__subheadline">Denver's Most Trusted Tax Advisor for 19 Years</p>
+      <p class="hero__description">
+        Expert tax solutions that protect you from the IRS while maximizing every deduction you deserve. Personalized guidance for individuals, entrepreneurs, and investors.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#contact" class="btn btn--primary btn--large">Schedule Free Consultation</a>
+        <a href="#services" class="btn btn--secondary btn--large">Explore Services</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <div class="hero__stat-number">4.4⭐</div>
+          <div class="hero__stat-label">Yelp Rating<br><span class="hero__stat-note">40+ Reviews</span></div>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">4.7⭐</div>
+          <div class="hero__stat-label">Birdeye Rating<br><span class="hero__stat-note">12+ Reviews</span></div>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">19</div>
+          <div class="hero__stat-label">Years Experience<br><span class="hero__stat-note">Since 2006</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-us" id="why-us">
+  <div class="section-inner">
+    <header class="section-header">
+      <div class="section-header__badge">Why Choose Us</div>
+      <h2 class="section-header__title">Why Denver Trusts Schwartz Accounting</h2>
+      <p class="section-header__subtitle">Four key reasons we've been Colorado's trusted tax partner for nearly two decades</p>
+    </header>
+
+    <div class="why-choose-us__container">
+      <div class="why-choose-us__highlight">
+        <div class="why-choose-us__highlight-content">
+          <div class="why-choose-us__highlight-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+            <span>Trusted Excellence</span>
+          </div>
+          <h3 class="why-choose-us__highlight-title">19 Years of Proven Success in Denver</h3>
+          <p class="why-choose-us__highlight-text">Since 2006, we've helped hundreds of Denver residents and businesses save thousands in taxes while staying compliant with IRS regulations. Our track record speaks for itself.</p>
+          <div class="why-choose-us__highlight-stats">
+            <div class="why-choose-us__highlight-stat">
+              <div class="why-choose-us__highlight-stat-number">19+</div>
+              <div class="why-choose-us__highlight-stat-label">Years</div>
+            </div>
+            <div class="why-choose-us__highlight-stat">
+              <div class="why-choose-us__highlight-stat-number">100+</div>
+              <div class="why-choose-us__highlight-stat-label">Clients</div>
+            </div>
+            <div class="why-choose-us__highlight-stat">
+              <div class="why-choose-us__highlight-stat-number">4.5+</div>
+              <div class="why-choose-us__highlight-stat-label">Rating</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-choose-us__highlight-visual">
+          <div class="why-choose-us__highlight-circle why-choose-us__highlight-circle--1"></div>
+          <div class="why-choose-us__highlight-circle why-choose-us__highlight-circle--2"></div>
+          <div class="why-choose-us__highlight-circle why-choose-us__highlight-circle--3"></div>
+          <div class="why-choose-us__highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-choose-us__grid">
+        <article *ngFor="let item of whyChooseUs; let i = index" class="why-card" [attr.data-index]="i">
+          <div class="why-card__wrapper">
+            <div class="why-card__number">{{ i + 1 }}</div>
+            
+            <div class="why-card__icon-container">
+              <div class="why-card__icon">{{ item.icon }}</div>
+              <div class="why-card__icon-bg"></div>
+            </div>
+            
+            <div class="why-card__content">
+              <h3 class="why-card__title">{{ item.title }}</h3>
+              <p class="why-card__description">{{ item.description }}</p>
+            </div>
+
+            <div class="why-card__footer">
+              <svg class="why-card__footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="why-card__footer-text">Guaranteed satisfaction</span>
+            </div>
+            
+            <div class="why-card__accent"></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="why-choose-us__trust-badges">
+        <div class="why-choose-us__trust-badge">
+          <div class="why-choose-us__trust-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div class="why-choose-us__trust-badge-content">
+            <div class="why-choose-us__trust-badge-title">IRS Compliant</div>
+            <div class="why-choose-us__trust-badge-text">100% Accurate Filing</div>
+          </div>
+        </div>
+        <div class="why-choose-us__trust-badge">
+          <div class="why-choose-us__trust-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <div class="why-choose-us__trust-badge-content">
+            <div class="why-choose-us__trust-badge-title">Secure & Private</div>
+            <div class="why-choose-us__trust-badge-text">Your Data Protected</div>
+          </div>
+        </div>
+        <div class="why-choose-us__trust-badge">
+          <div class="why-choose-us__trust-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="why-choose-us__trust-badge-content">
+            <div class="why-choose-us__trust-badge-title">Fast Response</div>
+            <div class="why-choose-us__trust-badge-text">Quick Turnaround</div>
+          </div>
+        </div>
+        <div class="why-choose-us__trust-badge">
+          <div class="why-choose-us__trust-badge-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </div>
+          <div class="why-choose-us__trust-badge-content">
+            <div class="why-choose-us__trust-badge-title">Top Rated</div>
+            <div class="why-choose-us__trust-badge-text">4.5+ Star Reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Services Overview Section -->
+<section class="services-overview" id="services">
+  <div class="section-inner">
+    <header class="section-header">
+      <div class="section-header__badge">Our Services</div>
+      <h2 class="section-header__title">Services Tailored to Your Situation</h2>
+      <p class="section-header__subtitle">From simple 1040 returns to complex business structures, we handle it all with expertise and personalized attention</p>
+    </header>
+
+    <div class="services-container">
+      <div class="services-intro">
+        <div class="services-intro__card">
+          <div class="services-intro__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="services-intro__content">
+            <h3 class="services-intro__title">Comprehensive Tax Solutions</h3>
+            <p class="services-intro__text">Whether you're filing a basic return or navigating complex multi-state business taxes, our 19 years of expertise ensures maximum deductions and complete accuracy.</p>
+          </div>
+        </div>
+        <div class="services-intro__pricing">
+          <div class="services-intro__pricing-label">Starting at</div>
+          <div class="services-intro__pricing-amount">$77</div>
+          <div class="services-intro__pricing-note">Simple 1040 Returns</div>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article *ngFor="let service of services; let i = index" class="service-card" [attr.data-index]="i">
+          <div class="service-card__wrapper">
+            <div class="service-card__header">
+              <div class="service-card__icon-container">
+                <div class="service-card__icon">{{ service.icon }}</div>
+                <div class="service-card__icon-bg"></div>
+              </div>
+              <div class="service-card__badge">Popular</div>
+            </div>
+
+            <div class="service-card__content">
+              <h3 class="service-card__title">{{ service.title }}</h3>
+              <p class="service-card__description">{{ service.description }}</p>
+            </div>
+
+            <div class="service-card__features">
+              <div class="service-card__feature">
+                <svg class="service-card__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="service-card__feature-text">Expert guidance</span>
+              </div>
+              <div class="service-card__feature">
+                <svg class="service-card__feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="service-card__feature-text">Maximum deductions</span>
+              </div>
+            </div>
+
+            <a href="#contact" class="service-card__cta">
+              <span>Get Started</span>
+              <svg class="service-card__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            
+            <div class="service-card__accent"></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="services-cta">
+        <div class="services-cta__content">
+          <div class="services-cta__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <div class="services-cta__text">
+            <h3 class="services-cta__title">Not sure which service you need?</h3>
+            <p class="services-cta__description">Schedule a free consultation and we'll help you determine the best approach for your tax situation.</p>
+          </div>
+          <a href="#contact" class="btn btn--primary btn--large">Talk to Richard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+  <div class="section-inner">
+    <header class="section-header">
+      <div class="section-header__badge">Client Testimonials</div>
+      <h2 class="section-header__title">What Our Clients Say</h2>
+      <p class="section-header__subtitle">Real experiences from Denver professionals and business owners who trust us with their taxes</p>
+    </header>
+
+    <div class="testimonials__container">
+      <div class="testimonials__stats-banner">
+        <div class="testimonials__stat-item">
+          <div class="testimonials__stat-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </div>
+          <div class="testimonials__stat-content">
+            <div class="testimonials__stat-number">4.4★</div>
+            <div class="testimonials__stat-label">Yelp Rating</div>
+            <div class="testimonials__stat-detail">40+ Reviews</div>
+          </div>
+        </div>
+        <div class="testimonials__stat-divider"></div>
+        <div class="testimonials__stat-item">
+          <div class="testimonials__stat-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+            </svg>
+          </div>
+          <div class="testimonials__stat-content">
+            <div class="testimonials__stat-number">4.7★</div>
+            <div class="testimonials__stat-label">Birdeye Rating</div>
+            <div class="testimonials__stat-detail">12+ Reviews</div>
+          </div>
+        </div>
+        <div class="testimonials__stat-divider"></div>
+        <div class="testimonials__stat-item">
+          <div class="testimonials__stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <div class="testimonials__stat-content">
+            <div class="testimonials__stat-number">100+</div>
+            <div class="testimonials__stat-label">Happy Clients</div>
+            <div class="testimonials__stat-detail">Since 2006</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonials__grid">
+        <article *ngFor="let testimonial of testimonials; let i = index" class="testimonial-card" [attr.data-index]="i">
+          <div class="testimonial-card__wrapper">
+            <div class="testimonial-card__quote-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+              </svg>
+            </div>
+
+            <div class="testimonial-card__rating">
+              <div class="testimonial-card__stars">
+                <svg *ngFor="let _ of [1, 2, 3, 4, 5]" class="testimonial-card__star" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+              </div>
+              <span class="testimonial-card__rating-text">5.0</span>
+            </div>
+
+            <p class="testimonial-card__text">"{{ testimonial.text }}"</p>
+
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar">
+                <span class="testimonial-card__avatar-text">{{ testimonial.author.charAt(0) }}</span>
+              </div>
+              <div class="testimonial-card__author-info">
+                <strong class="testimonial-card__author">{{ testimonial.author }}</strong>
+                <div class="testimonial-card__meta">
+                  <svg class="testimonial-card__location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <span class="testimonial-card__location">{{ testimonial.location }}</span>
+                </div>
+              </div>
+            </footer>
+
+            <div class="testimonial-card__accent"></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="testimonials__cta">
+        <p class="testimonials__cta-text">Join hundreds of satisfied clients who've maximized their tax savings</p>
+        <a href="#contact" class="btn btn--primary btn--large">Get Your Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Richard Section -->
+<section class="about-richard">
+  <div class="section-inner">
+    <header class="section-header">
+      <div class="section-header__badge">About Us</div>
+      <h2 class="section-header__title">Meet Richard Schwartz</h2>
+      <p class="section-header__subtitle">Denver's Most Trusted Tax Expert Since 2006</p>
+    </header>
+
+    <div class="about-richard__content">
+      <div class="about-richard__left">
+        <div class="about-richard__visual">
+          <div class="about-richard__image-wrapper">
+            <img src="assets/images/head-shot.jpg" alt="Richard Schwartz, Owner and Tax Expert" class="about-richard__image" />
+            <div class="about-richard__image-gradient"></div>
+          </div>
+          
+          <div class="about-richard__stats-grid">
+            <div class="about-richard__stat-card">
+              <div class="about-richard__stat-number">19+</div>
+              <div class="about-richard__stat-label">Years Experience</div>
+            </div>
+            <div class="about-richard__stat-card">
+              <div class="about-richard__stat-number">4.4★</div>
+              <div class="about-richard__stat-label">Client Rating</div>
+            </div>
+            <div class="about-richard__stat-card">
+              <div class="about-richard__stat-number">100+</div>
+              <div class="about-richard__stat-label">Happy Clients</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-richard__credentials">
+          <div class="about-richard__credential-item">
+            <div class="about-richard__credential-icon">🎓</div>
+            <div class="about-richard__credential-text">
+              <div class="about-richard__credential-title">Education</div>
+              <div class="about-richard__credential-detail">BS in Finance, University of New Orleans</div>
+            </div>
+          </div>
+          <div class="about-richard__credential-item">
+            <div class="about-richard__credential-icon">🏆</div>
+            <div class="about-richard__credential-text">
+              <div class="about-richard__credential-title">Recognition</div>
+              <div class="about-richard__credential-detail">2011 Denver Award Recipient</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-richard__right">
+        <div class="about-richard__story">
+          <h3 class="about-richard__story-title">Your Friend in Tax Preparation</h3>
+          <p class="about-richard__story-text">
+            Richard Schwartz isn't your typical tax preparer. For over 19 years, he's built his reputation on one simple principle: <strong>treat clients like friends, not numbers.</strong>
+          </p>
+          <p class="about-richard__story-text">
+            Richard started Schwartz Accounting & Tax Services to bring personalized, expert tax guidance to Denver's professionals, business owners, and investors. His hands-on approach and deep expertise have earned the trust of hundreds of clients.
+          </p>
+        </div>
+
+        <div class="about-richard__mission-statement">
+          <div class="about-richard__quote-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            </svg>
+          </div>
+          <blockquote class="about-richard__quote">
+            Our mission is to protect you from the IRS by getting you every credit and deduction you deserve while keeping you out of trouble.
+          </blockquote>
+          <cite class="about-richard__quote-author">— Richard Schwartz, Founder</cite>
+        </div>
+
+        <div class="about-richard__values">
+          <h4 class="about-richard__values-title">What Sets Us Apart</h4>
+          <div class="about-richard__values-grid">
+            <div class="about-richard__value-item">
+              <div class="about-richard__value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div class="about-richard__value-content">
+                <h5 class="about-richard__value-title">Owner-Led Service</h5>
+                <p class="about-richard__value-desc">Richard personally handles every client account with dedicated attention</p>
+              </div>
+            </div>
+            <div class="about-richard__value-item">
+              <div class="about-richard__value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div class="about-richard__value-content">
+                <h5 class="about-richard__value-title">Year-Round Support</h5>
+                <p class="about-richard__value-desc">Tax planning and IRS representation available throughout the year</p>
+              </div>
+            </div>
+            <div class="about-richard__value-item">
+              <div class="about-richard__value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <div class="about-richard__value-content">
+                <h5 class="about-richard__value-title">Complex Tax Expertise</h5>
+                <p class="about-richard__value-desc">Deep knowledge in real estate, multi-state, and business taxation</p>
+              </div>
+            </div>
+            <div class="about-richard__value-item">
+              <div class="about-richard__value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+              </div>
+              <div class="about-richard__value-content">
+                <h5 class="about-richard__value-title">Transparent Pricing</h5>
+                <p class="about-richard__value-desc">Fair rates starting at $77 with no hidden fees or surprises</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn--primary btn--large about-richard__cta">Schedule Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" id="contact">
+  <div class="cta-content">
+    <h2>Ready to Stop Overpaying Your Taxes?</h2>
+    <p>Schedule a consultation with Richard Schwartz today. We'll review your situation and show you exactly how much you could save.</p>
+    <p class="cta-subtext">First consultation is straightforward and pressure-free.</p>
+
+    <a href="#contact" class="btn btn--primary btn--large">Book Your Free Consultation</a>
+
+    <div class="cta-contact">
+      <p>Or call us directly at <strong>(720) 224-3800</strong></p>
+      <p class="cta-hours">Open Monday-Friday 9:00 AM - 6:30 PM | Saturday 10:00 AM - 3:00 PM (MST)</p>
+    </div>
+  </div>
+</section>

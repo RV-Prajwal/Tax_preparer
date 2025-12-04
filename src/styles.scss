@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+:root {
+  --color-primary: #217a8e;
+  --color-primary-dark: #1a5a6b;
+  --color-neutral-dark: #1f2121;
+  --color-bg-light: #fcfcf9;
+  --color-gray: #666666;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--color-bg-light);
+  color: var(--color-neutral-dark);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,49 @@
+<header class="site-header" [class.site-header--scrolled]="isScrolled">
+  <nav class="navbar" aria-label="Primary navigation">
+    <a class="navbar__brand" routerLink="/" (click)="closeMobileMenu()">
+      <div class="navbar__logo-wrapper">
+        <img
+          src="assets/logos/logo.png"
+          alt="Schwartz Accounting logo"
+          class="navbar__logo"
+        />
+      </div>
+      <div class="navbar__text">
+        <span class="navbar__company">Schwartz Accounting &amp; Tax Services</span>
+        <span class="navbar__tagline">Your Friend in Tax Preparation</span>
+      </div>
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="isMobileMenuOpen"
+      (click)="toggleMobileMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navbar__links" [class.navbar__links--open]="isMobileMenuOpen">
+      <a routerLink="/about" routerLinkActive="is-active" (click)="closeMobileMenu()">About</a>
+      <a routerLink="/services" routerLinkActive="is-active" (click)="closeMobileMenu()">Services</a>
+      <a routerLink="/pricing" routerLinkActive="is-active" (click)="closeMobileMenu()">Pricing</a>
+      <a routerLink="/testimonials" routerLinkActive="is-active" (click)="closeMobileMenu()">Testimonials</a>
+      <a routerLink="/resources" routerLinkActive="is-active" (click)="closeMobileMenu()">Resources</a>
+      <a routerLink="/faq" routerLinkActive="is-active" (click)="closeMobileMenu()">FAQ</a>
+      <a
+        routerLink="/contact"
+        routerLinkActive="is-active"
+        class="navbar__cta"
+        (click)="closeMobileMenu()"
+      >
+        <svg class="navbar__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        </svg>
+        <span>Book Appointment</span>
+      </a>
+    </div>
+  </nav>
+</header>
