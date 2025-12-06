@@ -23,6 +23,8 @@ interface WhyChooseUs {
   description: string;
 }
 
+declare var Calendly: any;
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -203,4 +205,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
+
+  openCalendly() {
+    // Replace YOUR_USERNAME with your Calendly username
+    Calendly.initPopupWidget({
+      url: 'https://calendly.com/workwithrvprajwal'
+    });
+  }
+
 }

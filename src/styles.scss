@@ -22,6 +22,46 @@ body {
   box-sizing: border-box;
 }
 
+/* === Calendly Popup – Styled Overlay === */
+
+/* Dark transparent background */
+.calendly-overlay {
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(6px);
+  animation: fadeInOverlay 0.25s ease-out;
+}
+
+/* Remove the rough default spinner */
+.calendly-spinner {
+  display: none !important;
+}
+
+/* Add animation to popup container */
+.calendly-popup {
+  animation: popupFadeIn 0.3s ease-out !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25) !important;
+}
+
+/* Smooth fade-in animation */
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Overlay fade */
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
