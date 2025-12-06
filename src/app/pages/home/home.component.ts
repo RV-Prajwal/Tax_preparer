@@ -141,7 +141,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     },
   ];
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll', [])
   onWindowScroll(): void {
     this.scrollY = window.scrollY;
     this.applyParallaxEffect();
@@ -162,7 +162,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private setupScrollAnimations(): void {
-    const observerOptions = {
+    const observerOptions: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px 0px -100px 0px',
       threshold: 0.15,
